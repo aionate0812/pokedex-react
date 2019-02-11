@@ -1,0 +1,16 @@
+.profile-img {
+    height: 250px;
+    padding-bottom:15px;
+}
+
+.pokemon-type-label {
+    color:white;
+    border-radius: 5px;
+    margin:0;
+    padding: 3px 45px 3px 45px;
+    
+}
+
+.spacing-between {
+    margin-left: 8px;
+}
