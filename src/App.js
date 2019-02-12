@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import {PokemonMasterList} from './containers/pokemon_masterList/pokemon-master-list'
 
 class App extends Component {
+  
   render() {
     return (
-      <div className="App">
-       
-      </div>
+      <>
+      <PokemonMasterList />
+      </>
     );
   }
 }
