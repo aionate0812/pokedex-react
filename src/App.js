@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import PokemonSearch from './components/pokemon-search';
+import PokeCard from './components/pokemon-pokeCard';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-       
-      </div>
+      <React.Fragment>
+      <PokemonSearch />
+      <PokeCard />
+      </React.Fragment>
     );
   }
 }

@@ -1,0 +1,8 @@
+.pokemon-display { 
+    width: 100%;
+    margin-right: 20%;
+    border-radius: 12px;
+    border: 2px solid lightgray;
+    margin-bottom: 20px;
+
+}

@@ -1,0 +1,50 @@
+.search-input {
+   border-radius: 5px;
+   width: 300px;
+   height: 35px;
+   padding-left: 15px;
+   margin-top: 15px;
+}
+.form-control{
+    margin: center;
+    padding-left: 20px;
+}
+.pokemon-title {
+  color: #CA1C2A;
+  text-align: center;
+}
+
+.red-display {
+ display: block;
+ background-color: #CA1C2A;
+ width: calc(100%-2px);
+ height: 20px;
+ margin: 2px;
+ margin-top: 2px;
+ box-sizing: border-box;
+
+}
+
+.logo-images1 { 
+    width: 70px;
+    margin: 20px;
+    float: left;
+
+}
+.logo-images2 {
+    width: 70px;
+    float: right;
+    margin: 20px;
+}
+
+.container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.header {
+    border-bottom: 2px solid #F0F0F0;
+    padding-bottom: 15px;
+ 
+}
+
