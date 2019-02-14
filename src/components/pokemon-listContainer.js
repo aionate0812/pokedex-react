@@ -7,7 +7,7 @@ const PokemonListContainer = props =>{
         <React.Fragment>
             <div className='container list'>
               <div className='row'>
-                <PokeCard  />
+              
               </div>
             </div>
         </React.Fragment>
