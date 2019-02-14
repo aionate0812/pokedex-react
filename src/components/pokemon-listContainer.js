@@ -1,6 +1,6 @@
 import React from 'react';
-import PokeCard from './pokemon-pokeCard';
-import './pokemon-list.css';
+
+
 
 const PokemonListContainer = props =>{
     return (
