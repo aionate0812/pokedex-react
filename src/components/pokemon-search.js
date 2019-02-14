@@ -55,7 +55,7 @@ dataSearch = (e) =>{
                 <h2 className='pokemon-title'>Pursuit Pokedex</h2>
                 <input className='search-input'type="text"  onChange={this.dataSearch} placeholder="Search.."></input>
                 {this.state.list.length === 0 ? null : this.state.list.map(poke => {
-                    return <div>{poke}</div>
+                    return <div className=' suggestBox dropdown-item '>{poke}</div>
                 })}
                 </div>
                  <div className='col col-2'>

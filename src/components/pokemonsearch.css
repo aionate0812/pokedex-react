@@ -5,6 +5,16 @@
    padding-left: 15px;
    margin-top: 15px;
 }
+input[type=text]:focus {
+    width: 300px;
+}
+
+input[type=text] {
+    width: 30%;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    padding: 20px;
+}
 .form-control{
     margin: center;
     padding-left: 20px;
@@ -48,3 +58,10 @@
  
 }
 
+.suggestBox  {
+    border: 2px solid #F0F0F0;
+    border-bottom: none;
+    border-radius: 5px;
+    /* padding-bottom: 15px; */
+    
+}
