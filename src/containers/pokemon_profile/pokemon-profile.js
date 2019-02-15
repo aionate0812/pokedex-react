@@ -4,6 +4,7 @@ import _ from 'lodash'
 import BaseStats from '../../components/base-stats/base-stats'
 import PokemonPicture from '../../components/pokemon-picture/pokemon-picture'
 import PokemonSprites from '../../components/pokemon-sprites/pokemon-sprites'
+import Moves from '../../components/moves/moves'
 import './pokemon-profile.css'
 
 class PokemonProfile extends Component {
@@ -12,6 +13,7 @@ class PokemonProfile extends Component {
         this.state = {
             name:'',
             pokemon:'',
+            
         }
     }
 
@@ -28,17 +30,24 @@ class PokemonProfile extends Component {
 
     }
     render () {
+        console.log('pokemon profile',this.state.pokemon.moves)
         return (
-            <div>
-                <div>
-                <span>Home</span> >> <span>{_.capitalize(this.state.name)}</span>
+            <div className='container'>
+                <div className='d-flex flex-row'>
+                    <p className='p-2'><span>Home</span> >> <span>{_.capitalize(this.state.name)}</span></p>
+                    <h3 style={{marginTop:'20px'}} className='ml-auto p-2'># {_.padStart(this.state.pokemon.id,3,'0')} - {_.capitalize(this.state.name)}</h3>
                 </div>
-                <h4># {_.padStart(this.state.pokemon.id,3,'0')} - {_.capitalize(this.state.name)}</h4>
-                <div  className='container pokemon-picture-container '>
-                    <PokemonPicture imageSrc={`https://img.pokemondb.net/artwork/${this.state.name}.jpg`} pokemonName={this.state.name} types={this.state.pokemon.types}/>
+                <div className='row justify-content-between'>
+                        <div className='col-4 img-center'>
+                                <PokemonPicture imageSrc={`https://img.pokemondb.net/artwork/${this.state.name}.jpg`} pokemonName={this.state.name} types={this.state.pokemon.types}/>
+                        </div>
+                        <div className='break-new-line'></div>
+                        <div className='col-8 align-self-center center-content'>
+                            <PokemonSprites sprites={this.state.pokemon.sprites}/>
+                        </div>
                 </div>
-                <PokemonSprites sprites={this.state.pokemon.sprites}/>
                 <BaseStats baseStats={this.state.pokemon.stats} />
+                {this.state.pokemon.moves?<Moves moves={this.state.pokemon.moves}/>:<p>Loading</p> }
             </div>
         )
     }

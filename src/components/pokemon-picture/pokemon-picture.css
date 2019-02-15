@@ -1,3 +1,8 @@
+.pokemon-picture-container {
+    width:320px;
+    height:280px;
+}
+
 .profile-img {
     height: 250px;
     padding-bottom:15px;

@@ -1,5 +1,41 @@
-.pokemon-picture-container {
-    width:25%;
-    height:280px;
-    border:1px solid green;
-}
+@media only screen and (max-width: 991px) {
+    .break-new-line {
+      width: 100%;
+    }
+    .center-content {
+        margin:auto;
+    }
+    .img-center {
+        flex: 0 0 100%;
+        max-width:100%;
+        margin-left:25%;
+    }
+  }
+
+  @media only screen and (max-width: 765px) {
+    .break-new-line {
+      width: 100%;
+    }
+    .center-content {
+        margin-left:8%;
+    }
+    .img-center {
+        flex: 0 0 100%;
+        max-width:100%;
+        margin-left:9%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .break-new-line {
+      width: 100%;
+    }
+    .center-content {
+        margin-left:10%;
+    }
+    .img-center {
+        flex: 0 0 100%;
+        max-width:100%;
+        margin-left:3%;
+    }
+  }
