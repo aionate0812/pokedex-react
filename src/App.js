@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import PokemonSearch from './components/pokemon-search';
+
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-       
-      </div>
+      <React.Fragment>
+      <PokemonSearch />
+      </React.Fragment>
     );
   }
 }
