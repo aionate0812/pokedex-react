@@ -50,7 +50,7 @@ clearDropdownList = () => {
  <React.Fragment>
       <div className='header'>
         <div className='red-display'></div>
-          <div className='container' >
+          <div className='search-container' >
            <div className='row'>
              <div className='col col-2'>
               <img className='logo-images1'src={require('../assets/pokeball.png')} alt='pokemon'/></div>
