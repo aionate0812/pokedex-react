@@ -21,7 +21,6 @@ class PokemonSearch extends React.Component {
             "Horsea","Seadra","Goldeen","Seaking","Staryu","Starmie","Mr. Mime","Scyther","Jynx", "Electabuzz","Magmar","Pinsir", 
         ],
             list: [],
-            
         }
     }
 
@@ -30,10 +29,11 @@ class PokemonSearch extends React.Component {
 dataSearch = (e) =>{
      let querySearch = []; 
      if(e.target.value !== ''){
-         this.state.pokemon.forEach((pokeData)=>{
-            if(pokeData.toLowerCase().startsWith(e.target.value.toLowerCase())){
+         this.state.pokemon.forEach((pokeData, i)=>{
+            if(pokeData.toLowerCase().startsWith(e.target.value.toLowerCase().trim())){
                 if(querySearch.length < 10){
                     querySearch.push(pokeData);   
+
                 }
             }
          })
@@ -43,12 +43,11 @@ dataSearch = (e) =>{
 }
 clearDropdownList = () => {
     this.setState({list: []})
-  
 }
    render(){
    return (
  <React.Fragment>
-      <div className='header'>
+      <div className='header' onClick={e => this.clearDropdownList()}>
         <div className='red-display'></div>
           <div className='search-container' >
            <div className='row'>
@@ -56,7 +55,7 @@ clearDropdownList = () => {
               <img className='logo-images1'src={require('../assets/pokeball.png')} alt='pokemon'/></div>
                <div className='col col-8'>
                 <h2 className='pokemon-title'>Pursuit Pokedex</h2>
-                <input className='search-input'type="text"  onChange={this.dataSearch} onClick={e => this.clearDropdownList()}placeholder="Search.." />
+                <input className='search-input' type='text'  onChange={this.dataSearch} onClick={e => this.clearDropdownList()} placeholder="Search.." />
                 {this.state.list.length === 0 ? null : this.state.list.map(poke => {
                     return <div className='suggestBox dropdown-item '>{poke}</div>
                 })}
