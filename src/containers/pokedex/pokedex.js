@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PokemonProfile from '../../containers/pokemon_profile/pokemon-profile'
-import PokemonSearch from '../../components/pokemon-search';
+import PokemonSearch from '../../components/pokemon-search/pokemon-search';
 import axios from 'axios'
 
 class Pokedex extends Component {

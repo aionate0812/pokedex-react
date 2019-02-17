@@ -1,5 +1,5 @@
 import React from 'react'
-import PokemonList from '../services/pokemon-list';
+import PokemonList from '../../services/pokemon-list';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './pokemonsearch.css';
 // import _ from 'lodash';
@@ -47,16 +47,16 @@ handlePokemonSelected (e) {
           <div className='search-container' >
            <div className='row'>
              <div className='col col-2'>
-              <img className='logo-images1'src={require('../assets/pokeball.png')} alt='pokemon'/></div>
+              <img className='logo-images1'src={require('../../assets/pokeball.png')} alt='pokemon'/></div>
                <div className='col col-8'>
                 <h2 className='pokemon-title'>Pursuit Pokedex</h2>
                 <input className='search-input' type='text'  onChange={this.dataSearch} onClick={e => this.clearDropdownList()} placeholder="Search.." />
-                {this.state.list.length === 0 ? null : this.state.list.map(poke => {
-                    return <div onClick={this.handlePokemonSelected.bind(this)} className='suggestBox dropdown-item '>{poke}</div>
+                {this.state.list.length === 0 ? null : this.state.list.map((poke, i)=> {
+                    return <div onClick={this.handlePokemonSelected.bind(this)} className='suggestBox dropdown-item' key={i}>{poke}</div>
                 })}
                 </div>
                  <div className='col col-2'>
-                  <img className='logo-images2'src={require('../assets/pokeball.png')} alt='pokemon'/>
+                  <img className='logo-images2'src={require('../../assets/pokeball.png')} alt='pokemon'/>
                    </div>
                 </div>    
             </div>       
