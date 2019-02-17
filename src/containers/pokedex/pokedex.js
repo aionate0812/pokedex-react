@@ -30,14 +30,19 @@ class Pokedex extends Component {
         
     }
 
+    homePageViewer = () => {
+      this.setState({pokemonSelected: null})
+    }
+
     
   render() {
       
     return (
       <div>
-      <PokemonSearch selectPokemon={this.selectPokemon.bind(this)} />
-       {!this.state.pokemonSelected?'waiting for pokemon':<PokemonProfile pokemonSelected={this.state.pokemonSelected} />}
+      <PokemonSearch selectPokemon={this.selectPokemon.bind(this)}/>
+       {!this.state.pokemonSelected?
        <PokemonMasterList />
+        :<PokemonProfile pokemonSelected={this.state.pokemonSelected} homePageViewer={this.homePageViewer}/>}
       </div>
     );
   }

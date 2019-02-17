@@ -24,7 +24,7 @@ class PokemonMasterList extends Component {
         }
         if(this.state.pokeList.length >= 940){
             pokeLimit = 4
-            this.setState({pokeDisplay: "hidden"})
+            this.setState({pokeDisplay: "none"})
         }
         axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${pokeOffset}&limit=${pokeLimit}`)
         .then(data=>{
@@ -44,10 +44,10 @@ class PokemonMasterList extends Component {
     render() {
         return (
             <>
-                <div className="container">
+                <div className="container" style={{"marginBottom":"20px"}}>
                     <div className="row">
                         <Pokecard pokeState={this.state}/>
-                        <button className="col-12" style={{"width":"100px","backgroundColor":"red", "color":"white", "textAlign":"center", "cursor":"pointer","visibility":this.state.pokeDisplay}} onClick={this.pokeLoad}>
+                        <button className="col-12" style={{"width":"100px","backgroundColor":"red", "color":"white", "textAlign":"center", "cursor":"pointer","display":this.state.pokeDisplay}} onClick={this.pokeLoad}>
                             Load More...
                         </button>
                     </div>
