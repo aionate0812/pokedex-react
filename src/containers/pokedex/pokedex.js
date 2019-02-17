@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PokemonProfile from '../../containers/pokemon_profile/pokemon-profile'
 import PokemonSearch from '../../components/pokemon-search';
-import {PokemonMasterList} from './containers/pokemon_masterList/pokemon-master-list'
+import {PokemonMasterList} from '../pokemon_masterList/pokemon-master-list.js'
 import axios from 'axios'
 
 class Pokedex extends Component {
