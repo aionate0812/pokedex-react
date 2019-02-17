@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PokemonProfile from '../../containers/pokemon_profile/pokemon-profile'
+import {PokemonMasterList} from '../pokemon_masterList/pokemon-master-list.js'
 import PokemonSearch from '../../components/pokemon-search/pokemon-search';
 import axios from 'axios'
 
@@ -29,13 +30,19 @@ class Pokedex extends Component {
         
     }
 
+    homePageViewer = () => {
+      this.setState({pokemonSelected: null})
+    }
+
     
   render() {
       
     return (
       <div>
-      <PokemonSearch selectPokemon={this.selectPokemon.bind(this)} />
-       {!this.state.pokemonSelected?'waiting for pokemon':<PokemonProfile pokemonSelected={this.state.pokemonSelected} />}
+      <PokemonSearch selectPokemon={this.selectPokemon.bind(this)}/>
+       {!this.state.pokemonSelected?
+       <PokemonMasterList />
+        :<PokemonProfile pokemonSelected={this.state.pokemonSelected} homePageViewer={this.homePageViewer}/>}
       </div>
     );
   }
