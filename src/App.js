@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import {PokemonMasterList} from './containers/pokemon_masterList/pokemon-master-list'
-
+import Pokedex from '../src/containers/pokedex/pokedex'
 class App extends Component {
   
   render() {
     return (
-      <>
-      <PokemonMasterList />
-      </>
+      <div className="App">
+        <Pokedex />
+      </div>
     );
   }
 }
 
 export default App;
+

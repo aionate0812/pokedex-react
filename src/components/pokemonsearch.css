@@ -1,0 +1,73 @@
+.search-input {
+   border-radius: 5px;
+   width: 300px;
+   height: 35px;
+   padding-left: 15px;
+   margin-top: 15px;
+}
+input[type=text]:focus {
+    width: 300px;
+}
+
+input[type=text] {
+    width: 300px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    padding: 20px;
+}
+
+.pokemon-title {
+  color: #CA1C2A;
+  text-align: center;
+}
+
+.red-display {
+ display: block;
+ background-color: #CA1C2A;
+ width: calc(100%-2px);
+ height: 20px;
+ margin: 2px;
+ margin-top: 2px;
+ box-sizing: border-box;
+
+}
+
+.logo-images1 { 
+    width: 70px;
+    margin: 20px;
+    float: left;
+
+}
+.logo-images2 {
+    width: 70px;
+    float: right;
+    margin: 20px;
+}
+
+div > .search-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.header {
+    border-bottom: 2px solid #F0F0F0;
+    padding-bottom: 15px;
+ 
+}
+.suggestBox {
+    margin: 0px 150px 0px 322px;
+    border-radius: 2px;
+}
+
+.dropdown-item {
+    display: block;
+    width: 32%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: #a4d8a63d;;
+    border: 0;
+}
