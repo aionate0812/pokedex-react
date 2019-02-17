@@ -1,4 +1,4 @@
-const pokemonList = {pokemon:[
+const PokemonList = {pokemon:[
 	"Bulbasaur",
 	"Ivysaur",
 	"Venusaur",

@@ -6,7 +6,7 @@ import './pokemon-picture.css'
 const renderTypes = (types) => {
     if(types) {
         return types.map((e,i) => {
-            return <span className={`pokemon-type-label ${i!==0?'spacing-between':''}`}
+            return <span className={`pokemon-type-label ${i !== 0?'spacing-between':''}`}
             style={{backgroundColor:`#${pokemonTypes[_.capitalize(e.type.name)]}`}} 
             key={i}>{_.capitalize(e.type.name)}</span>
         })

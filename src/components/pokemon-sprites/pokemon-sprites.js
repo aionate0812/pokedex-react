@@ -18,9 +18,10 @@ class PokemonSprites extends Component {
     renderSprites (sprites) {
         let newSprites = _.pickBy(sprites, e => e !== null)
         newSprites = _.map(newSprites, (value,keys) => {
-            return <img key={keys} onMouseEnter={this.handleMouseHover.bind(this)} src={value} alt='' data-sprite={keys.includes('default')?'Default':'Shiny'}/>
+            return <img key={keys} onMouseEnter={this.handleMouseHover.bind(this)} src={value} alt='' data-sprite={keys.includes('shiny')?'Shiny':'Default'}/>
         })  
         newSprites = _.reverse(newSprites)
+        
         return [].concat(_.reverse(newSprites.slice(0,2)).concat(_.reverse(newSprites.slice(2))))
     }
 
