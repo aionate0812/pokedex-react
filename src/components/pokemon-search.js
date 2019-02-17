@@ -30,7 +30,7 @@ dataSearch = (e) =>{
      let querySearch = []; 
      if(e.target.value !== ''){
          this.state.pokemon.forEach((pokeData, i)=>{
-            if(pokeData.toLowerCase().startsWith(e.target.value.toLowerCase().trim())){
+            if(pokeData.toLowerCase().includes(e.target.value.toLowerCase().trim())){
                 if(querySearch.length < 10){
                     querySearch.push(pokeData);   
 
