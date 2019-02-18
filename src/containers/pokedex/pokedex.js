@@ -14,20 +14,36 @@ class Pokedex extends Component {
         }
     }
 
+    componentDidMount () {
+      if(!localStorage.getItem('pokemons')){
+      localStorage.setItem('pokemons',JSON.stringify({}))
+      localStorage.setItem('moves',JSON.stringify({}))
+      }
+      
+    }
+
     selectPokemon (pokemon) {
+      let localPokemons = localStorage.getItem('pokemons')
+      localPokemons = JSON.parse(localPokemons)
+      console.log(localPokemons)
+
+      if(localPokemons.pokemon){
+        this.setState({ 
+          pokemonSelected:pokemon,
+       });
+      } else {
       axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
       .then(res => {
         const pokemon = res.data;
         this.setState({ 
             pokemonSelected:pokemon,
-         });
+         },()=>{
+           localPokemons[pokemon.name] = pokemon
+           
+           localStorage.setItem('pokemons',JSON.stringify(localPokemons))
+         })
       })
-      // this.setState({
-        //     pokemonSelected:pokemon,
-        //     currentPage: pokemon,
-        // })
-        // setTimeout(()=>{console.log('pokemon selected now', this.state)},3000)
-        
+    }
     }
 
     homePageViewer = () => {

@@ -13,7 +13,6 @@ class Moves extends React.Component {
  
     
     render () {
-        console.log(this.state.moves)
         return (
             <div>
                 <div className='moves-component'>
