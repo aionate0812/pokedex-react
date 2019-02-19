@@ -1,0 +1,41 @@
+.textAlign {
+    text-align: center
+}
+
+.leftFloat {
+    float: left
+}
+
+.rightFloat {
+    float: right
+}
+
+.rightPad {
+padding-right: 40px
+}
+
+.leftPad {
+ padding-left: 40px
+}
+
+.textStyling {
+    color: blue;
+    padding-top: 5px;
+}
+
+.buttonStyle {
+    min-height: 40px;
+    border: solid 1px black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px
+}
+
+.buttonStyle:hover {
+    background-color: yellow;
+    opacity: .3;
+}
+
+.curser {
+    cursor:pointer
+}

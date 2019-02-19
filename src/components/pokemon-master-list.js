@@ -2,16 +2,19 @@ import React from 'react';
 import _ from 'lodash';
 import song from '../assets/music.mp3'
 import image from '../assets/teamRocket.jpg'
+import './pokemon-master-list.css'
+import InfiniteScroll from 'react-infinite-scroller'
+import {CircleArrow as ScrollUpButton} from "react-scroll-up-button"
 
 const PokeCard = (props) => {
     if (props.pokeState.pokeError.status) {
         return (
             <>
-                <div className="col-12" style={{ "textAlign": "center", }}>
+                <div className="col-12 textAlign">
                     <audio src={song} autoPlay></audio>
                     <img style={{ "height": "400px" }} src={image} alt={''} />
                 </div>
-                <div className="col-12" style={{ "textAlign": "center", }}>
+                <div className="col-12 textAlign">
                     {props.pokeState.pokeError.msg}
                 </div>
             </>
@@ -19,20 +22,26 @@ const PokeCard = (props) => {
     }
     return (
         <>
-            {props.pokeState.pokeList.map((e, i) => {
+            <InfiniteScroll
+                pageStart={0}
+                loadMore={props.pokeLoad}
+                hasMore={true || false}
+                loader={""}>
+                {props.pokeState.pokeList.map((e, i) => {
                 return (
-                    <div className="col-12" style={{"minHeight":"40px", "textAlign": "center", "border":"solid 1px black", "marginTop":"5px", "marginBottom":"5px", "borderRadius":"5px" }} key={i}>
-                        <span style={{ "float": "left", }}>
-                            <img src={`https://img.pokemondb.net/sprites/sun-moon/icon/${e.name}.png`} alt={''} onError={(e) => { e.target.onerror = null; e.target.src = "https://i.imgur.com/sohWhy9.jpg"; e.target.style = 'height:25px;width:35px' }} />
+                    <button className="col-12 textAlign buttonStyle curser" onClick={props.handlePokemonSelected} key={i}>
+                        <span className="leftFloat">
+                            <img src={`https://img.pokemondb.net/sprites/sun-moon/icon/${e.name}.png`} alt={''} onError={(e) => { e.target.onerror = null; e.target.src = "https://i.imgur.com/sohWhy9.jpg"; e.target.style = 'justifyContent:center;height:30px;width:40px' }} />
                         </span>
-                        <span style={{ "float": "left", "color":"blue", "paddingTop":"5px", "paddingLeft":"40px"}} onClick={props.handlePokemonSelected}>{_.capitalize(e.name)}</span>
-                        <span style={{ "float": "right", "color":"blue", "paddingTop":"5px", "paddingRight":"40px"}}>#  {_.padStart(i + 1, 3, '0')}</span>
-                    </div>
+                        <span className="leftFloat textStyling leftPad">{_.capitalize(e.name)}</span>
+                        <span className="rightFloat textStyling rightPad">#  {_.padStart(i + 1, 3, '0')}</span>
+                    </button>
                 )
             })}
-            <button className="col-12" style={{"width":"100%","backgroundColor":"red", "color":"white", "textAlign":"center", "cursor":"pointer","border":"red","borderRadius":"5px","display":props.pokeState.pokeDisplay}} onClick={props.pokeState.pokeLoad}>
-                Load More...
-            </button>
+            </InfiniteScroll>
+            <div>
+                <ScrollUpButton />
+            </div>
         </>
     )
 }

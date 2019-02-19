@@ -43,3 +43,7 @@
   .home-button {
     cursor:pointer;
   }
+
+  .home-button:hover {
+    color:blue
+  }
