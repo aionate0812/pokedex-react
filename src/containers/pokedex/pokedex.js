@@ -52,6 +52,7 @@ class Pokedex extends Component {
   render() {
       
     return (
+      
       <div>
       <PokemonSearch selectPokemon={this.selectPokemon.bind(this)}/>
        {!this.state.pokemonSelected?
