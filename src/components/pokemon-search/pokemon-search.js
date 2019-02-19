@@ -53,9 +53,10 @@ handlePokemonSelected =(e) => {
     this.props.selectPokemon(e.target.innerHTML.toLowerCase())
 }
 handlekeyDown = (e)=>{
-    if(e.keyCode === 13){
-        this.props.selectPokemon(e.target.innerHTML.toLowerCase())
-        console.log(e.key)
+    if(e.keyCode === 13 && e.target.parentNode.children[2]){
+        let pokemon = e.target.parentNode.children[2].children[0].innerHTML.toLowerCase()
+        this.props.selectPokemon(pokemon)
+        this.setState({list: []})
     }
 }
 
@@ -71,11 +72,11 @@ handlekeyDown = (e)=>{
               <img className='logo-images1' onClick={this.play} src={require('../../assets/pokeball.png')} alt='pokemon'/></div>
                <div className='col col-4' >
                 <h2 className='pokemon-title'>Digidex</h2>
-                <input className='search-input' type='text'  onChange={this.dataSearch}  onClick={e => this.clearDropdownList()} placeholder="Search.." />
+                <input className='search-input' type='text'  onChange={this.dataSearch} onKeyDown={this.handlekeyDown} onClick={e => this.clearDropdownList()} placeholder="Search.." />
                 {this.state.list.length === 0 ? null :
                 <div className='dropdown-item'>
                     {this.state.list.map((poke, i)=> {
-                    return <div className='curser colorChange' onClick={this.handlePokemonSelected} onKeyDown={this.handlekeyDown} tabIndex="0" key={i}>{poke}</div>
+                    return <div className='curser colorChange' onClick={this.handlePokemonSelected} tabIndex="0" key={i}>{poke}</div>
                 })}
                 </div>
                 } 
