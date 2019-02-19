@@ -1,17 +1,17 @@
 .search-input {
    border-radius: 5px;
-   width: 300px;
+   width: 80%;
    height: 35px;
    padding-left: 15px;
    margin-top: 15px;
    
 }
 input[type=text]:focus {
-    width: 300px;
+    width: 70%;
 }
 
 input[type=text] {
-    width: 300px;
+    width: 100%;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
     padding: 20px;
@@ -34,13 +34,13 @@ input[type=text] {
 }
 
 .logo-images1 { 
-    width: 70px;
+    width: 85px;
     margin: 20px;
     float: left;
 
 }
 .logo-images2 {
-    width: 70px;
+    width: 85px;
     float: right;
     margin: 20px;
 }
@@ -76,6 +76,9 @@ div > .search-container {
     align-self: auto;
     border-radius: 2px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    position: inherit;
+    position: absolute;
     z-index: 99;
+    margin: -6px -10px -3px -3px
+    
+    
 }

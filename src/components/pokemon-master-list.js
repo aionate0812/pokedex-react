@@ -28,7 +28,7 @@ const PokeCard = (props) => {
                             <img src={`https://img.pokemondb.net/sprites/sun-moon/icon/${e.name}.png`} alt={''} onError={(e) => { e.target.onerror = null; e.target.src = "https://i.imgur.com/sohWhy9.jpg"; e.target.style = 'height:25px;width:35px' }} />
                         </span>
                         <span style={{ "float": "left", }}>{e.name}</span>
-                        <span style={{ "float": "right", }}>{_.padStart(i + 1, 3, '0')}</span>
+                        <span style={{ "float": "right", }}> # {_.padStart(i + 1, 3, '0')}</span>
                     </div>
                 )
             })}
