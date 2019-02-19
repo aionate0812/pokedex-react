@@ -56,7 +56,7 @@ class Pokedex extends Component {
       <div>
       <PokemonSearch selectPokemon={this.selectPokemon.bind(this)}/>
        {!this.state.pokemonSelected?
-       <PokemonMasterList />
+       <PokemonMasterList selectPokemon={this.selectPokemon.bind(this)}/>
         :<PokemonProfile pokemonSelected={this.state.pokemonSelected} homePageViewer={this.homePageViewer}/>}
       </div>
     );
