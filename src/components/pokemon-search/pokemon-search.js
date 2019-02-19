@@ -2,6 +2,7 @@ import React from 'react'
 import PokemonList from '../../services/pokemon-list';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './pokemonsearch.css';
+import song from '../../assets/pokeTheme.mp3'
 // import _ from 'lodash';
 
 class PokemonSearch extends React.Component {
@@ -10,11 +11,23 @@ class PokemonSearch extends React.Component {
         this.state = {  
             pokemon:PokemonList.pokemon,
             list: [],
-            pokemonSelected: null
-           
+            pokemonSelected: null,
+            play: false,
+            pause: true, 
         }
+        this.url = song;
+        this.audio = new Audio(this.url);
     }
 
+    play = () => {
+        this.setState({ play: true, pause: false })
+        this.audio.play();
+    }
+        
+    pause = () => {
+        this.setState({ play: false, pause: true })
+        this.audio.pause();
+    }
    
   
 dataSearch = (e) =>{
@@ -45,6 +58,8 @@ handlekeyDown = (e)=>{
         console.log(e.key)
     }
 }
+
+
    render(){
    return (
  <React.Fragment>
@@ -53,16 +68,20 @@ handlekeyDown = (e)=>{
           <div className='search-container'  >
            <div className='row' >
              <div className='col col-4' >
-              <img className='logo-images1'src={require('../../assets/pokeball.png')} alt='pokemon'/></div>
+              <img className='logo-images1' onClick={this.play} src={require('../../assets/pokeball.png')} alt='pokemon'/></div>
                <div className='col col-4' >
                 <h2 className='pokemon-title'>Digidex</h2>
                 <input className='search-input' type='text'  onChange={this.dataSearch}  onClick={e => this.clearDropdownList()} placeholder="Search.." />
-                {this.state.list.length === 0 ? null : this.state.list.map((poke, i)=> {
-                    return <div onClick={this.handlePokemonSelected} onKeyDown={this.handlekeyDown} tabIndex="0" className='dropdown-item' key={i}>{poke}</div>
-                })} 
+                {this.state.list.length === 0 ? null :
+                <div className='dropdown-item'>
+                    {this.state.list.map((poke, i)=> {
+                    return <div className='curser colorChange' onClick={this.handlePokemonSelected} onKeyDown={this.handlekeyDown} tabIndex="0" key={i}>{poke}</div>
+                })}
+                </div>
+                } 
                 </div>  
                  <div className='col col-4'>
-                  <img className='logo-images2'src={require('../../assets/pokeball.png')} alt='pokemon'/>
+                  <img className='logo-images2' onClick={this.pause} src={require('../../assets/pokeball.png')} alt='pokemon'/>
                    </div>
                 </div>    
                 <div style={{'position': 'absolute', 'zIndex': '100'}}></div>
