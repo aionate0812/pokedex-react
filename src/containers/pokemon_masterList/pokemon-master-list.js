@@ -28,7 +28,6 @@ class PokemonMasterList extends Component {
         }
         axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${pokeOffset}&limit=${pokeLimit}`)
         .then(data=>{
-            console.log(data.data.results)
             this.setState({pokeList: [].concat(this.state.pokeList, data.data.results)})
         })
         .catch(err=>{
