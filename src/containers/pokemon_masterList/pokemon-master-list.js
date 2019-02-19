@@ -17,7 +17,11 @@ class PokemonMasterList extends Component {
     }
 
     handlePokemonSelected (e) { 
-        this.props.selectPokemon(e.target.children[1].innerHTML.toLowerCase())
+        if(e.target.children[1]) {
+            this.props.selectPokemon(e.target.children[1].innerHTML.toLowerCase())
+        } else {
+            this.props.selectPokemon(e.target.parentNode.children[1].innerHTML.toLowerCase())
+        }
     }
 
     pokeLoad = () =>{

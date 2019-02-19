@@ -30,9 +30,9 @@ const PokeCard = (props) => {
                 {props.pokeState.pokeList.map((e, i) => {
                 return (
                     <button className="col-12 textAlign buttonStyle curser" onClick={props.handlePokemonSelected} key={i}>
-                        <span className="leftFloat">
-                            <img src={`https://img.pokemondb.net/sprites/sun-moon/icon/${e.name}.png`} alt={''} onError={(e) => { e.target.onerror = null; e.target.src = "https://i.imgur.com/sohWhy9.jpg"; e.target.style = 'justifyContent:center;height:30px;width:40px' }} />
-                        </span>
+                        
+                            <img className="leftFloat" src={`https://img.pokemondb.net/sprites/sun-moon/icon/${e.name}.png`} alt={''} onError={(e) => { e.target.onerror = null; e.target.src = "https://i.imgur.com/sohWhy9.jpg"; e.target.style = 'justifyContent:center;height:30px;width:40px' }} />
+                        
                         <span className="leftFloat textStyling leftPad">{_.capitalize(e.name)}</span>
                         <span className="rightFloat textStyling rightPad">#  {_.padStart(i + 1, 3, '0')}</span>
                     </button>
