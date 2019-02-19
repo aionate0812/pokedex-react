@@ -27,7 +27,7 @@ class Pokedex extends Component {
       localPokemons = JSON.parse(localPokemons)
       if(localPokemons.pokemon){
         this.setState({ 
-          pokemonSelected:pokemon,
+          pokemonSelected:pokemon
        });
       } else {
       axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
