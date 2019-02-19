@@ -22,15 +22,15 @@ dataSearch = (e) =>{
      if(e.target.value !== ''){
          this.state.pokemon.forEach((pokeData, i)=>{
             if(pokeData.toLowerCase().includes(e.target.value.toLowerCase().trim())){
-                if(querySearch.length < 10){
-                    querySearch.push(pokeData);   
-
-                }
+                if(querySearch.length < 10){ 
+                    querySearch.push(pokeData);      
+              }
             }
          })
     }
     
     this.setState({list: querySearch}); 
+    
 }
 clearDropdownList = () => {
     this.setState({list: []})
@@ -40,10 +40,22 @@ handlePokemonSelected =(e) => {
     this.props.selectPokemon(e.target.innerHTML.toLowerCase())
 }
 handlekeyDown = (e)=>{
-    if(e.keyCode === 13){
-        this.props.selectPokemon(e.target.innerHTML.toLowerCase())
-        console.log(e.key)
+    // const searchData = e.currentTarget.innerHTML
+    // console.log(searchData)
+    // let index = null;
+    // this.state.pokemon.forEach((pokeData,i)=>{
+    //     if(pokeData.toLowerCase() === searchData.toLowerCase()){
+    //         index = i;
+    //         i = pokeData.length;
+    //     }
+    //     if(index !== searchData ){
+    //         console.log('pokemon not found')
+    //     }
+    // })
+    if(e.key === 'Enter'){
+    this.props.selectPokemon(e.target.innerHTML.toLowerCase())
     }
+   
 }
    render(){
    return (
@@ -58,14 +70,14 @@ handlekeyDown = (e)=>{
                 <h2 className='pokemon-title'>Pursuit Pokedex</h2>
                 <input className='search-input' type='text'  onChange={this.dataSearch}  onClick={e => this.clearDropdownList()} placeholder="Search.." />
                 {this.state.list.length === 0 ? null : this.state.list.map((poke, i)=> {
-                    return <div onClick={this.handlePokemonSelected} onKeyDown={this.handlekeyDown} tabIndex="0" className='dropdown-item' key={i}>{poke}</div>
+                    return <div onClick={this.handlePokemonSelected} onKeyDown={this.handlekeyDown} tabIndex='0' className='dropdown-item' key={i}>{poke}</div>
                 })} 
                 </div>  
                  <div className='col col-2'>
                   <img className='logo-images2'src={require('../../assets/pokeball.png')} alt='pokemon'/>
                    </div>
                 </div>    
-                <div style={{'position': 'absolute', 'zIndex': '100'}}></div>
+               
             </div>       
          </div>
          <div > </div>
