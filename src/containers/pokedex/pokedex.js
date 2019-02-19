@@ -25,11 +25,9 @@ class Pokedex extends Component {
     selectPokemon (pokemon) {
       let localPokemons = localStorage.getItem('pokemons')
       localPokemons = JSON.parse(localPokemons)
-      console.log(localPokemons)
-
       if(localPokemons.pokemon){
         this.setState({ 
-          pokemonSelected:pokemon,
+          pokemonSelected:pokemon
        });
       } else {
       axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
@@ -54,10 +52,11 @@ class Pokedex extends Component {
   render() {
       
     return (
+      
       <div>
       <PokemonSearch selectPokemon={this.selectPokemon.bind(this)}/>
        {!this.state.pokemonSelected?
-       <PokemonMasterList />
+       <PokemonMasterList selectPokemon={this.selectPokemon.bind(this)}/>
         :<PokemonProfile pokemonSelected={this.state.pokemonSelected} homePageViewer={this.homePageViewer}/>}
       </div>
     );

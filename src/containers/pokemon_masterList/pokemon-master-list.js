@@ -16,6 +16,10 @@ class PokemonMasterList extends Component {
         }
     }
 
+    handlePokemonSelected (e) { 
+        this.props.selectPokemon(e.target.innerHTML.toLowerCase())
+    }
+
     pokeLoad = () =>{
         let pokeOffset = 0
         let pokeLimit = 20
@@ -28,11 +32,9 @@ class PokemonMasterList extends Component {
         }
         axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${pokeOffset}&limit=${pokeLimit}`)
         .then(data=>{
-            console.log(data.data.results)
             this.setState({pokeList: [].concat(this.state.pokeList, data.data.results)})
         })
         .catch(err=>{
-            console.log(err)
             this.setState({pokeError: {status: true, msg:"Sorry Couldn't Catch 'Em All"}})
         })
     }
@@ -44,12 +46,9 @@ class PokemonMasterList extends Component {
     render() {
         return (
             <>
-                <div className="container" style={{"marginBottom":"20px"}}>
-                    <div className="row">
-                        <Pokecard pokeState={this.state}/>
-                        <button className="col-12" style={{"width":"100px","backgroundColor":"red", "color":"white", "textAlign":"center", "cursor":"pointer","display":this.state.pokeDisplay}} onClick={this.pokeLoad}>
-                            Load More...
-                        </button>
+                <div className="container" style={{"marginBottom":"20px","marginTop":"30px"}}>
+                    <div className="flex-row" >
+                        <Pokecard pokeState={this.state} handlePokemonSelected={this.handlePokemonSelected.bind(this)}/>
                     </div>
                 </div>
             </>

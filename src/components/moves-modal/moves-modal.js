@@ -26,7 +26,7 @@ class MovesModal extends React.Component {
         this.setState({
           moveInfo:localMoves[this.state.move.name]
       })
-      }
+      } else {
         axios.get(this.state.move.url)
         .then((res)=>{
             let move  = res.data
@@ -37,6 +37,7 @@ class MovesModal extends React.Component {
               localStorage.setItem('moves',JSON.stringify(localMoves))
             })
         })
+      }
     })
   }
 
