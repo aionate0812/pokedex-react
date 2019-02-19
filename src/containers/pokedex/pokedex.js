@@ -25,8 +25,6 @@ class Pokedex extends Component {
     selectPokemon (pokemon) {
       let localPokemons = localStorage.getItem('pokemons')
       localPokemons = JSON.parse(localPokemons)
-      console.log(localPokemons)
-
       if(localPokemons.pokemon){
         this.setState({ 
           pokemonSelected:pokemon,
