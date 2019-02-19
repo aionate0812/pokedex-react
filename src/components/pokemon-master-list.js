@@ -23,12 +23,7 @@ const PokeCard = (props) => {
     }
     return (
         <>
-            <InfiniteScroll
-                pageStart={0}
-                loadMore={props.pokeLoad}
-                hasMore={true || false}
-                loader={""}>
-                {props.pokeState.pokeList.map((e, i) => {
+            {props.pokeState.pokeList.map((e, i) => {
                 return (
                     <button className="col-12 textAlign buttonStyle curser" onClick={props.handlePokemonSelected} key={i}>
                         
@@ -39,6 +34,12 @@ const PokeCard = (props) => {
                     </button>
                 )
             })}
+            <InfiniteScroll
+                pageStart={0}
+                loadMore={props.pokeLoad}
+                hasMore={true || false}
+                loader={""}>
+                {""}
             </InfiniteScroll>
             <div>
                 <ScrollUpButton />
