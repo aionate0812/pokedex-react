@@ -47,3 +47,7 @@
   .home-button:hover {
     color:blue
   }
+
+  .profile-container {
+    width:75%;
+  }

@@ -18,7 +18,7 @@ const renderStats = (statsArr) => {
 const BaseStats = (props) => {
     return (
         <div style={{marginTop:'50px'}}>
-        <h2>Base Stats</h2>
+        <h2 className='base-stats-header'>Base Stats</h2>
             <div className='row justify-content-around base-stats-container'>
             {renderStats(props.baseStats)}
             </div>

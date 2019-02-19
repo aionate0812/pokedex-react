@@ -8,7 +8,7 @@ const Moves = (props) => {
         return (   
             <div>
                 <div className='moves-component'>
-                    <h2>Moves</h2>
+                    <h2 className='moves-header'>Moves</h2>
                         <div className='moves-container'>
                             <div style={{height:'5px'}}></div>
                             {props.moves.map((e,i)=>{

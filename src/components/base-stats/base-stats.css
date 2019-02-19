@@ -25,6 +25,8 @@
 }
 
 .base-stats-container {
+    width:98.3%;
+    margin-left:8px;
     text-align: center;
     margin-top:15px;
     border-radius: 5px;
@@ -34,4 +36,8 @@
 
 .base-stats-title {
     color: #A2A2A2;
+}
+
+.base-stats-header {
+    margin-left:6px; 
 }

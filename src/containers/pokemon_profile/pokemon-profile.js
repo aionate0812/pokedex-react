@@ -10,7 +10,7 @@ const PokemonProfile = (props) => {
 
     return (
         
-                    <div className='container'>
+                    <div className='container profile-container'>
                         <div className='d-flex flex-row'>
                             <p className='p-2'><span onClick={props.homePageViewer} className='home-button'>Home</span> >> <span>{_.capitalize(props.pokemonSelected.name)}</span></p>
                             <h3 style={{marginTop:'20px'}} className='ml-auto p-2'># {_.padStart(props.pokemonSelected.id,3,'0')} - {_.capitalize(props.pokemonSelected.name)}</h3>

@@ -4,10 +4,15 @@
 }
 
 .moves-container {
+    padding-left:7px;
     padding-top:5px;
     overflow:auto;
-    width:100%;
+    width:99%;
     height:50px;
-     white-space:nowrap;
-     display:inline-block;
+    white-space:nowrap;
+    display:inline-block;
+}
+
+.moves-header {
+    margin-left:6px;
 }

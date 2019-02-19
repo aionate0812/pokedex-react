@@ -17,7 +17,7 @@ const PokemonPicture = (props) => {
         <React.Fragment>
         <div className='pokemon-picture-container'>
             <div className='row justify-content-center'>
-                <img className='col-12 profile-img' src={props.imageSrc} alt={props.pokemonName} />
+                <img className='col-10 profile-img' src={props.imageSrc} alt={props.pokemonName} />
                 <div className='col'style={{textAlign:'center'}}>
                     {renderTypes(props.types)}
                 </div>
