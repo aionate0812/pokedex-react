@@ -42,7 +42,6 @@ handlePokemonSelected =(e) => {
 handlekeyDown = (e)=>{
     if(e.keyCode === 13){
         this.props.selectPokemon(e.target.innerHTML.toLowerCase())
-        console.log(e.key)
     }
 }
    render(){
@@ -58,7 +57,7 @@ handlekeyDown = (e)=>{
                 <h2 className='pokemon-title'>Digidex</h2>
                 <input className='search-input' type='text'  onChange={this.dataSearch}  onClick={e => this.clearDropdownList()} placeholder="Search.." />
                 {this.state.list.length === 0 ? null : this.state.list.map((poke, i)=> {
-                    return <div onClick={this.handlePokemonSelected} onKeyDown={this.handlekeyDown} tabIndex="0" className='dropdown-item' key={i}>{poke}</div>
+                    return <div onClick={this.handlePokemonSelected} onKeyDown={this.handlekeyDown} tabIndex="0" className=' dropdown-item' key={i}>{poke}</div>
                 })} 
                 </div>  
                  <div className='col col-4'>
