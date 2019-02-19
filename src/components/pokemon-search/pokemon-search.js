@@ -72,6 +72,7 @@ handlekeyDown = (e)=>{
               <img className='logo-images1' onClick={this.play} src={require('../../assets/pokeball.png')} alt='pokemon'/></div>
                <div className='col col-4' >
                 <h2 className='pokemon-title'>Digidex</h2>
+
                 <input className='search-input' type='text'  onChange={this.dataSearch} onKeyDown={this.handlekeyDown} onClick={e => this.clearDropdownList()} placeholder="Search.." />
                 {this.state.list.length === 0 ? null :
                 <div className='dropdown-item'>
