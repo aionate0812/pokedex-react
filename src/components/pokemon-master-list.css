@@ -32,10 +32,9 @@ padding-right: 40px
 }
 
 .buttonStyle:hover {
-    background-color: yellow;
-    opacity: .3;
+    border: 1px;
 }
 
 .curser {
-    cursor:pointer
+    cursor: pointer
 }
