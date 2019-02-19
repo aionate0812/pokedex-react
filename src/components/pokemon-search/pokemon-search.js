@@ -55,7 +55,7 @@ handlekeyDown = (e)=>{
              <div className='col col-4' >
               <img className='logo-images1'src={require('../../assets/pokeball.png')} alt='pokemon'/></div>
                <div className='col col-4' >
-                <h2 className='pokemon-title'>Pursuit Pokedex</h2>
+                <h2 className='pokemon-title'>Digidex</h2>
                 <input className='search-input' type='text'  onChange={this.dataSearch}  onClick={e => this.clearDropdownList()} placeholder="Search.." />
                 {this.state.list.length === 0 ? null : this.state.list.map((poke, i)=> {
                     return <div onClick={this.handlePokemonSelected} onKeyDown={this.handlekeyDown} tabIndex="0" className='dropdown-item' key={i}>{poke}</div>
